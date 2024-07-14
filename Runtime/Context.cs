@@ -13,12 +13,10 @@ namespace TheKiwiCoder {
         public GameObject gameObject;
         public Transform transform;
         public Animator animator;
-        public Rigidbody physics;
+        public Rigidbody2D physics;
         public NavMeshAgent agent;
-        public SphereCollider sphereCollider;
-        public BoxCollider boxCollider;
-        public CapsuleCollider capsuleCollider;
-        public CharacterController characterController;
+        public BoxCollider2D boxCollider;
+        public PolygonCollider2D polygonCollider;
         // Add other game specific systems here
 
         public static Context CreateFromGameObject(GameObject gameObject) {
@@ -27,12 +25,10 @@ namespace TheKiwiCoder {
             context.gameObject = gameObject;
             context.transform = gameObject.transform;
             context.animator = gameObject.GetComponentInChildren<Animator>();
-            context.physics = gameObject.GetComponent<Rigidbody>();
+            context.physics = gameObject.GetComponent<Rigidbody2D>();
             context.agent = gameObject.GetComponent<NavMeshAgent>();
-            context.sphereCollider = gameObject.GetComponent<SphereCollider>();
-            context.boxCollider = gameObject.GetComponent<BoxCollider>();
-            context.capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
-            context.characterController = gameObject.GetComponent<CharacterController>();
+            context.boxCollider = gameObject.GetComponent<BoxCollider2D>();
+            context.polygonCollider = gameObject.GetComponent<PolygonCollider2D>();
 
             // Add whatever else you need here...
 
